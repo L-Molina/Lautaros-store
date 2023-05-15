@@ -1,0 +1,21 @@
+{% style %}
+{{ settings.primary_font | font_face: font_display: 'swap' }}
+  {{ settings.secondary_font | font_face: font_display: 'swap' }}
+
+  :root  {
+    /*
+      Typography - Font families
+    */
+    --font-family-primary: {{ settings.primary_font.family }}
+    , {{ settings.primary_font.fallback_families }}
+    ;
+    --font-family-secondary: {{ settings.secondary_font.family }}
+    , {{ settings.secondary_font.fallback_families }}
+    ;
+	
+	/* Colors */
+	  --color-primary: {{ settings.color_primary }};
+		--color-secondary: {{ settings.color_secondary }};
+		--color-text: {{ settings.color_text }};
+}
+{% endstyle %}

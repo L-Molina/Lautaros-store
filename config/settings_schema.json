@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Font families"
+      },
+      {
+        "type": "paragraph",
+        "content": "Select primary, secondary fonts globally. These fonts are later used on global sections as settings."
+      },
+      {
+        "type": "font_picker",
+        "id": "primary_font",
+        "label": "Primary Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "font_picker",
+        "id": "secondary_font",
+        "label": "Secondary Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Font sizes"
+      },
+      {
+        "type": "paragraph",
+        "content": "Font size(large, base, small & tiny) are later used on global sections as settings."
+      },
+      {
+        "type": "range",
+        "id": "font_size_lage",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size (large)",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "font_size_base",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size (base)",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "font_size_small",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size (small)",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "font_size_x_small",
+        "min": 10,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size (x-small)",
+        "default": 11
+      }
+    ]
+  }, {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary",
+        "default": "#518581"
+      },
+      {
+        "type": "header",
+        "content": "Secondary"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary",
+        "default": "#FFB23F"
+      },
+      {
+        "type": "header",
+        "content": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#151411"
+      }
+    ]
+  }
+]

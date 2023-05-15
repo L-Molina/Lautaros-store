@@ -1,0 +1,28 @@
+<header class="header" id="header">
+  <div class="header-inner flex space-between">
+    <a class="header-title" src="/home">
+      <img
+        src="../assets/lautaros-store-low-resolution-logo-black-on-transparent-background.png"
+        alt="Logo"
+        class="lautaros-store-logo"
+      />
+    </a>
+    <div class="navigation" id="navigation">
+  		{% for link in linklists.main-menu.links %}
+     		<a class="nav-button" href="{{ link.handle }}">{{ link.title }}</a>
+     	{%  endfor %}
+    </div>
+    <div class="cart-button-container">
+      <button class="cart-button" @click="toggleMiniCart">
+        <span class="cart-icon">
+					{% render 'cart-icon' %} 
+				</span>
+				0
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %} { "name": "Header", "tag": "section", "class": "section",
+"settings": [ { "type": "link_list", "id": "menu", "label": "Menu", "default":
+"main-menu" } ] } {% endschema %}
