@@ -1,0 +1,26 @@
+{% for block in section.blocks %}
+   <div class="swiper-slide">
+     <!-- Product Card -->
+   </div>
+{% endfor %}
+
+
+{% schema %}
+{
+  "name": "Product Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
