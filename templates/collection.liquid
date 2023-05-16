@@ -1,14 +1,9 @@
 <h1>{{ collection.title }}</h1>
 
-{% paginate collection.products by 10 %}
-  {% for product in collection.products %}
-    <div>
-      <!-- Product Card -->
-    </div>
-  {% else %}
-    <p>There are no products on this collection</p>
+{% paginate section.settings.collection.products by 10 %}
+  {% for product in section.settings.collection.products %}
+    {% render 'product-card', product: product %}
   {% endfor %}
-
-  {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
-
+    {% if paginate.pages > 1 %}
+      {{ paginate | default_pagination }}{% endif %}
 {% endpaginate %}

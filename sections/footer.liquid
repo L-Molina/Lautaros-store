@@ -14,7 +14,6 @@
           {% case block.type %}
             {% when 'footer_menu' %}
             <ul class="secondary-menu">
-							{%  %}
               <p>{{ block.settings.menu_links.title }}</p>
               {% for link in block.settings.menu_links.links %}
                 <li>
@@ -37,6 +36,7 @@
           </div>
         {% endcase %}
       {% endfor %}
+      <small className='website-rights'>© 2023, Lautaro's Store Powered by Shopify</small>
     </div>
   </div>
 </footer>
