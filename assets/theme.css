@@ -123,13 +123,16 @@ table {
   border-spacing: 0;
 }
 .header {
-  max-height: 130px;
+  display: flex;
+  flex-direction: row;
+  max-height: auto;
+  width: 100%;
   justify-content: center;
   font-size: 1.2rem;
   position: sticky;
   top: 0; 
   z-index: 999;
-  background-color: antiquewhite;
+  background-color: white;
 }
 .lautaros-store-logo {
   max-width: 25%;
@@ -142,7 +145,7 @@ table {
 }
 
 .lautaros-store-logo:hover {
-  background-color: wheat;
+  background-color: gainsboro;
   transition: all 0.2s ease-in-out;
 }
 
@@ -152,8 +155,7 @@ table {
   grid-gap: 20px;
   list-style: none;
   text-align: center;
-  width: 65vw;
-  justify-content: end;
+  width: 200px;
   margin-right: 1rem;
 }
 
@@ -169,8 +171,8 @@ table {
 }
 
 .nav-button:hover {
-  background-color: wheat;
-  border-bottom: 3px solid black;
+  color: black;
+  background-color: gainsboro;
   transition: all 0.2s ease-in-out;
 }
 
@@ -180,13 +182,13 @@ table {
 }
 
 .cart-button {
-  background-color: antiquewhite;
+  background-color: white;
   border: none;
   cursor: pointer;
 }
 
 .cart-button:hover {
-  background-color: wheat;
+  background-color: gainsboro;
   transition: all 0.2s ease-in-out;
 }
 
@@ -196,7 +198,7 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 .footer-left {
