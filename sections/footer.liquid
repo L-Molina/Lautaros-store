@@ -1,4 +1,10 @@
 <footer class="footer">
+  {%- liquid 
+    assign has_social_icons = true
+    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_twitter_link == blank 
+      assign has_social_icons = false
+    endif  
+  -%}
   <div class="footer-inner flex space-between">
     <div class="footer-left half">
 			{% if section.settings.footer_logo != null %}
@@ -17,9 +23,7 @@
               <p>{{ block.settings.menu_links.title }}</p>
               {% for link in block.settings.menu_links.links %}
                 <li>
-
                   <a href="{{ link.handle }}">{{ link.title }}</a>
-
                 </li>
               {% endfor %}
             </ul>
@@ -27,11 +31,13 @@
           {% when 'footer_social' %}
           <div class="footer-menu footer-social flex column half">
             <ul>
-              {% for block in section.blocks %}
-                <li>
-                  <a href="{{ block.settings.link }}">{{ block.settings.title }}</a>
-                </li>
-              {% endfor %}
+              {% if has_social_icons == true %}
+                  {% for block in section.blocks %}
+                  <li>
+                    <a href="{{ block.settings.link }}">{{ block.settings.title }}</a>
+                  </li>
+                {% endfor %}
+              {% endif %}
             </ul>
           </div>
         {% endcase %}

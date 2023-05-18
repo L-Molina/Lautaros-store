@@ -1,0 +1,42 @@
+<div class="product-card">
+  <img src="" alt="Imagen del producto no disponible" class="product-image">
+  <p>Producto: </p>
+  <p>Precio: </p>
+</div>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": {
+    "type": "product",
+    "id": "product",
+    "label": "Product"
+},
+  "blocks": [
+    {
+      "name": "product-image",
+      "settings": {
+        "type": "image_picker",
+        "id": "id",
+        "label": "label"
+      }
+    },
+    {
+      "name": "product-name",
+      "settings": [
+        {
+         "type": "header"
+        }
+      ]
+    },
+    {
+      "name": "product-price",
+      "settings": [
+				{
+					"type": "text"
+				}
+      ]
+    }
+  ]
+}
+{% endschema %}

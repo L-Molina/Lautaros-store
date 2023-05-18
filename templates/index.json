@@ -2,19 +2,29 @@
     "sections": {
         "main-slider": {
             "type": "main-slider",
+            "settings": {
+                "image_height": "large",
+                "desktop_content_alignment": "center",
+                "mobile_content_alignment": "center",
+                "stack_images_on_mobile": false,
+                "show_text_below": false
+            }
+        },
+        "product-grid": {
+            "type": "product-grid",
             "blocks": {
-
+                "Product": {
+                    "type": "product",
+                    "settings": {
+                        "type": "product",
+                        "id": "product",
+                        "label": "Product"
+                    }
+                }
             },
             "block-order": [
-
+                "Product"
             ]
-
-        },
-        "product-slider": {
-            "type": "product-grid",
-            "settings": {
-
-            }
         }
     },
     "order": [
