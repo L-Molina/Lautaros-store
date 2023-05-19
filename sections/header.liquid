@@ -1,11 +1,11 @@
 <header class="header" id="header">
   <div class="header-inner flex space-between">
-    <a class="header-title" src="/home">
-      <img
-        src="../assets/lautaros-store-low-resolution-logo-black-on-transparent-background.png"
-        alt="Logo"
-        class="lautaros-store-logo"
-      />
+    <a class="header-title lautaros-store-logo" src="/home">
+      {% if section.settings.header != null %}
+      	{{ section.settings.header | image_url: width: 130 | image_tag: width: 130 }}
+			{% else %}
+				<img class="lautaros-store-logo" src="../assets/lautaros-store-low-resolution-logo-black-on-transparent-background.png" alt="Logo">
+			{% endif %}
     </a>
     <div class="navigation" id="navigation">
   		{% for link in linklists.main-menu.links %}
@@ -29,7 +29,11 @@
   "tag": "section",
   "class": "section",
   "settings": [ 
-    { 
+    {
+      "type": "image_picker",
+      "id": "header_logo",
+      "label": "Logo"
+    }, { 
       "type": "link_list", 
       "id": "menu", 
       "label": "Menu", 

@@ -1,42 +1,18 @@
 <div class="product-card">
-  <img src="" alt="Imagen del producto no disponible" class="product-image">
-  <p>Producto: </p>
-  <p>Precio: </p>
+  {% for block in section.blocks %}
+		<span>
+			{{ section.settings.image| image_url: width: 3840, height: image_height }}
+		</span>
+	{% endfor %}
 </div>
 
 {% schema %}
 {
   "name": "Product",
-  "settings": {
-    "type": "product",
-    "id": "product",
-    "label": "Product"
-},
-  "blocks": [
-    {
-      "name": "product-image",
-      "settings": {
-        "type": "image_picker",
-        "id": "id",
-        "label": "label"
-      }
-    },
-    {
-      "name": "product-name",
-      "settings": [
-        {
-         "type": "header"
-        }
-      ]
-    },
-    {
-      "name": "product-price",
-      "settings": [
-				{
-					"type": "text"
-				}
-      ]
-    }
-  ]
+  "settings": { 
+		"type": "image_picker",
+		"id": "image",
+		"label": "image.label"
+	}
 }
 {% endschema %}

@@ -1,7 +1,9 @@
 <div class="product-grid">
-  {% if product.featured_image != blank %}
-    {% include 'image-style' with image: product.featured_image %}
-  {% endif %}
+  {% for block in section.blocks %}
+    {% if product.image != blank %}
+      {% include 'product-card' with image: product.image %}
+    {% endif %}
+  {% endfor %}
 </div>
 
 

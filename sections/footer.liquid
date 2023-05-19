@@ -10,7 +10,7 @@
 			{% if section.settings.footer_logo != null %}
       	{{ section.settings.footer_logo | image_url: width: 130 | image_tag: width: 130 }}
 			{% else %}
-				{{shop.name}}
+      <img class="lautaros-store-logo" src="../assets/lautaros-store-low-resolution-logo-black-on-transparent-background.png" alt="Logo">
 			{% endif %}
 			{{ section.settings.footer_description }}
     </div>

@@ -1,8 +1,11 @@
-{% for block in section.blocks %}
-   <div class="swiper-slide">
-     <!-- Product Card -->
-   </div>
-{% endfor %}
+{% if section.blocks.size > 1 %}
+	{% for block in section.blocks %}
+		<div class="swiper-slide">
+			{% include 'collection' %}
+		</div>
+	{% endfor %}
+{% endif %}
+
 
 
 {% schema %}
