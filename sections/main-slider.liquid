@@ -1,7 +1,7 @@
 {% if section.blocks.size > 1 %}
 	{% for block in section.blocks %}
 		<div class="swiper-slide">
-			{% include 'collection' %}
+			{{ section.settings.featured-image | image_url: width: 1920 | image_tag: width: 1920 }}
 		</div>
 	{% endfor %}
 {% endif %}
@@ -9,23 +9,22 @@
 {% schema %}
 {
   "name": "main-slider",
-  "max_blocks": 3,
+	"limit": 2,
   "settings": [
 		{
-			"type": "collection",
-			"id": "collection",
-			"label": "Collection"
+			"type": "slideshow",
+			"id": "slider",
+			"label": "slider"
 		}
 	],
   "blocks": [
     {
-      "name": "Product",
-      "type": "product",
+      "name": "slider-image",
+			"type": "image-picker",
       "settings": [
         {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
+          "type": "image",
+          "id": "image",
         }
       ]
     }
