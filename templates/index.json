@@ -1,34 +1,70 @@
 {
     "sections": {
-        "main-slider": {
-            "type": "main-slider",
+      "main-slider": {
+        "type": "main-slider",
+        "blocks": {
+          "19dd6baa-4089-4616-bab2-3f4c5f795e0c": {
+            "type": "product",
             "settings": {
-                "image_height": "large",
-                "desktop_content_alignment": "center",
-                "mobile_content_alignment": "center",
-                "stack_images_on_mobile": false,
-                "show_text_below": false
+              "product": "kilo-de-yerba-mate"
             }
+          },
+          "890614dd-e169-4c23-ad42-350c2963a76c": {
+            "type": "product",
+            "settings": {
+              "product": "palmeritas-hojalmar"
+            }
+          }
         },
-        "product-grid": {
-            "type": "product-grid",
-            "blocks": {
-                "Product": {
-                    "type": "product",
-                    "settings": {
-                        "type": "product",
-                        "id": "product",
-                        "label": "Product"
-                    }
-                }
-            },
-            "block-order": [
-                "Product"
-            ]
+        "block_order": [
+          "19dd6baa-4089-4616-bab2-3f4c5f795e0c",
+          "890614dd-e169-4c23-ad42-350c2963a76c"
+        ],
+        "settings": {
+          "collection": "merienda-criolla"
         }
+      },
+      "product-grid": {
+        "type": "product-grid",
+        "blocks": {
+          "6b76f072-f698-4a11-8484-8887c09de672": {
+            "type": "product",
+            "settings": {
+              "product": "mate-y-bombilla"
+            }
+          },
+          "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71": {
+            "type": "product",
+            "settings": {
+              "product": "termo-para-mate"
+            }
+          },
+          "582de0a9-59c8-4182-985d-4cb9b1493f54": {
+            "type": "product",
+            "settings": {
+              "product": "kilo-de-yerba-mate"
+            }
+          },
+          "16bbcddd-fa24-457c-9833-7c7e42a69b85": {
+            "type": "product",
+            "settings": {
+              "product": "palmeritas-hojalmar"
+            }
+          }
+        },
+        "block_order": [
+          "6b76f072-f698-4a11-8484-8887c09de672",
+          "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71",
+          "582de0a9-59c8-4182-985d-4cb9b1493f54",
+          "16bbcddd-fa24-457c-9833-7c7e42a69b85"
+        ],
+        "settings": {
+          "collection": "merienda-criolla"
+        }
+      }
     },
     "order": [
-        "main-slider",
-        "product-grid"
+      "main-slider",
+      "product-grid"
     ]
-}
+  }

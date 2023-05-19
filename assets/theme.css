@@ -123,21 +123,17 @@ table {
   border-spacing: 0;
 }
 .header {
-  display: flex;
-  flex-direction: row;
-  max-height: auto;
   width: 100%;
-  justify-content: center;
   font-size: 1.2rem;
   position: sticky;
   top: 0; 
   z-index: 999;
   background-color: white;
+  margin-bottom: 30px;
 }
 .lautaros-store-logo {
-  max-width: 25%;
-  max-height: 60px;
-  justify-self: start;
+  width: auto;
+  max-height: 70px;
   padding: 0.3rem 0.8rem;
   margin-left: 15px;
   margin-top: 10px;
@@ -150,18 +146,19 @@ table {
 }
 
 .navigation {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+  flex-flow: row;
   grid-gap: 20px;
-  list-style: none;
-  text-align: center;
-  width: 200px;
-  margin-right: 1rem;
+  text-decoration: none;
 }
 
 .nav-button {
+  height: auto;
   color: black;
+  text-align: center;
+  width: fit-content;
   align-items: center;
+  margin-top: 45px;
   text-decoration: none;
   padding: 0.3rem 0.8rem;
   cursor: pointer;
@@ -172,16 +169,18 @@ table {
 
 .nav-button:hover {
   color: black;
-  background-color: gainsboro;
-  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-size: 22px;
+  transition: all 0.1s ease-in-out;
 }
 
 .cart-button-container {
-  width: fit-content;
   margin-right: 200px;
 }
 
 .cart-button {
+  min-width: fit-content;
+  margin-top: 50px;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -199,6 +198,9 @@ table {
   justify-content: center;
   align-items: center;
   background-color: white;
+  font-family: 'Trebuchet MS', 
+    'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .footer-left {
@@ -242,4 +244,49 @@ table {
 .website-rights {
   color: black;
   margin-bottom: 16px;
+}
+
+.product-grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Trebuchet MS', 
+    'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.grid-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 0.3rem 0.8rem;
+}
+
+.product-card {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  box-shadow: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 16px;
+  margin-left: 50px;
+  border: 2px solid whitesmoke;
+}
+
+.grid-subtitle {
+  color: gray;
+  margin: 20px;
+}
+
+.grid-title {
+  color: black;
+  font-size: 33px;
 }
