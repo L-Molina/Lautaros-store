@@ -1,1 +1,24 @@
-{"current":{},"presets":{}}
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify:\/\/shop_images\/lautaros-store-low-resolution-logo-black-on-transparent-background.png",
+          "footer_description": "Hacemos de cada momento una experiencia mágica"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+  }
+}
