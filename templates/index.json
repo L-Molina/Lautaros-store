@@ -1,45 +1,45 @@
 {
-    "sections": {
-      "product-grid": {
-        "type": "product-grid",
-        "blocks": {
-          "6b76f072-f698-4a11-8484-8887c09de672": {
-            "type": "product",
-            "settings": {
-              "product": "mate-y-bombilla"
-            }
-          },
-          "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71": {
-            "type": "product",
-            "settings": {
-              "product": "termo-para-mate"
-            }
-          },
-          "582de0a9-59c8-4182-985d-4cb9b1493f54": {
-            "type": "product",
-            "settings": {
-              "product": "kilo-de-yerba-mate"
-            }
-          },
-          "16bbcddd-fa24-457c-9833-7c7e42a69b85": {
-            "type": "product",
-            "settings": {
-              "product": "palmeritas-hojalmar"
-            }
+  "sections": {
+    "product-grid": {
+      "type": "product-grid",
+      "blocks": {
+        "6b76f072-f698-4a11-8484-8887c09de672": {
+          "type": "product",
+          "settings": {
+            "product": "mate-y-bombilla"
           }
         },
-        "block_order": [
-          "6b76f072-f698-4a11-8484-8887c09de672",
-          "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71",
-          "582de0a9-59c8-4182-985d-4cb9b1493f54",
-          "16bbcddd-fa24-457c-9833-7c7e42a69b85"
-        ],
-        "settings": {
-          "collection": "merienda-criolla"
+        "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71": {
+          "type": "product",
+          "settings": {
+            "product": "termo-para-mate"
+          }
+        },
+        "582de0a9-59c8-4182-985d-4cb9b1493f54": {
+          "type": "product",
+          "settings": {
+            "product": "kilo-de-yerba-mate"
+          }
+        },
+        "16bbcddd-fa24-457c-9833-7c7e42a69b85": {
+          "type": "product",
+          "settings": {
+            "product": "palmeritas-hojalmar"
+          }
         }
+      },
+      "block_order": [
+        "6b76f072-f698-4a11-8484-8887c09de672",
+        "e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71",
+        "582de0a9-59c8-4182-985d-4cb9b1493f54",
+        "16bbcddd-fa24-457c-9833-7c7e42a69b85"
+      ],
+      "settings": {
+        "collection": "merienda-criolla"
       }
-    },
-    "order": [
-      "product-grid"
-    ]
-  }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

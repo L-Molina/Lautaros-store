@@ -5,13 +5,14 @@
         "type": "header",
         "settings": {
           "header_logo": "shopify:\/\/shop_images\/lautaros-store-low-resolution-logo-black-on-transparent-background.png",
+          "brand_name": "Lautaro's Store",
           "menu": "main-menu"
         }
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_logo": "shopify:\/\/shop_images\/lautaros-store-low-resolution-logo-black-on-transparent-background.png",
+          "brand_name": "BrandName",
           "footer_description": "Hacemos de cada momento una experiencia mágica"
         }
       }
