@@ -1,49 +1,51 @@
 <footer class="footer">
   <div class="footer-container">
-			<h4 class="footer-title">
+    <div class="title-description">
+      <h4 class="footer-title">
         {{ section.settings.brand_name }}
       </h4>
       <h5 class="footer-description">
         {{ section.settings.footer_description }}
       </h5>
+    </div>
+    <div class="social-menu">
       {% for block in section.blocks %}
         {% case block.type %}
+          {% when 'footer_social' %}
+              {% if block.settings.title == "twitter" %}
+                <a href="{{ link.handle }}" class="social-icon">
+                  {% render 'icon-twitter' %}
+                </a>  
+              {% endif %}
+              {% if block.settings.title == "facebook" %} 
+                <a href="{{ link.handle }}" class="social-icon">
+                  {% render 'icon-facebook' %}
+                </a>  
+              {% endif %}
+              {% if block.settings.title == "instagram" %}
+                <a href="{{ link.handle }}" class="social-icon">
+                  {% render 'icon-instagram' %}
+                </a>  
+              {% endif %}
           {% when 'footer_menu' %} 
             <div class="footer-menu">
               <ul class="secondary-menu">
-                <p>{{ block.settings.menu_links.title}}</p>
+                <h3 class="menu-title">{{ block.settings.menu_links.title}}</h3>
                   {% for link in block.settings.menu_links.links %}
                       <li>
-                        <a href="{{ link.handle }}" class="text-gray-700 transition hover:opacity-75">
+                        <a href="{{ link.handle }}" class="menu-link">
                           {{ link.title }}
                         </a>
                       </li>
                   {% endfor %}
               </ul>
             </div>
-          {% when 'footer_social' %}
-            <div class="footer-social">
-              <ul>
-                {% if block.settings.title == "twitter" %}
-                  <li class="social-icon">
-                    {% render 'icon-twitter' %}
-                  </li>
-                {% endif %}
-                {% if block.settings.title == "facebook" %}
-                  <li class="social-icon">
-                    {% render 'icon-facebook' %}
-                  </li>
-                {% endif %}
-                {% if block.settings.title == "instagram" %}
-                  <li class="social-icon">
-                    {% render 'icon-instagram' %}
-                  </li>
-                {% endif %}
-              </ul>
-            </div>
           {% endcase %}
         {% endfor %}
-      <small className='website-rights'>© 2023, Lautaro's Store Powered by Shopify</small>
+      </div>	
+    </div>
+    <div class="website-rights">
+      <small>© 2023, Lautaro's Store Powered by Shopify</small>
     </div>
 </footer>
 
