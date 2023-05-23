@@ -11,9 +11,60 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "twitter": {
+            "type": "footer_social",
+            "settings": {
+              "title": "twitter",
+              "link": "https://twitter.com/"
+            }
+          },
+          "facebook": {
+            "type": "footer_social",
+            "settings": {
+              "title": "facebook",
+              "link": "https://facebook.com/"
+            }
+          },
+          "instagram": {
+            "type": "footer_social",
+            "settings": {
+              "title": "instagram",
+              "link": "https://instagram.com/"
+            }
+          },
+          "c42835fd-fc4f-49e8-88b8-3a2e1e8fd9e7": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_links": "company-info"
+            }
+          },
+          "55d0587e-4a5c-41d1-822c-7a495f02e30c": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_links": "recursos"
+            }
+          },
+          "865b4e30-53cc-4292-9dd3-4591000af7a2": {
+            "type": "footer_menu",
+            "settings": {
+              "menu_links": "features"
+            }
+          }
+        },
+        "block_order": [
+          "c42835fd-fc4f-49e8-88b8-3a2e1e8fd9e7",
+          "55d0587e-4a5c-41d1-822c-7a495f02e30c",
+          "865b4e30-53cc-4292-9dd3-4591000af7a2",
+          "twitter",
+          "facebook",
+          "instagram"
+        ],
         "settings": {
+<<<<<<< HEAD
           "brand_name": "BrandName",
           "footer_description": "Hacemos de cada momento una experiencia mágica"
+>>>>>>> 3b3c47d (added menu links)
         }
       }
     },

@@ -215,14 +215,7 @@ table {
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
-}
-
-.footer-left {
-  height: 76px;
-}
-
-.footer-right {
-  height: 76px;
+  font-weight: 800;
 }
 
 .footer-menu {
@@ -234,23 +227,36 @@ table {
 }
 
 .footer-social {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
   margin: 40px auto 0 auto;
+}
+
+.social-icon {
+  color: #23A6F0;
 }
 
 .footer-title {
   width: 140px;
   height: 18px;
   color: black;
-  font-weight: 800;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
   cursor: pointer;
+}
+
+.footer-description {
+  color: #737373;
+  font-size: 14px;
+}
+
+small {
+  color: #737373;
+  font-size: 14px;
+  margin-bottom: 16px;
 }
 
 .swiper-slide {
@@ -259,11 +265,6 @@ table {
   width: 100%;
   min-height: 30%;
   background-color: white;
-}
-
-.website-rights {
-  color: black;
-  margin-bottom: 16px;
 }
 
 .product-grid-container {
