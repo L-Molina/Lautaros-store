@@ -1,49 +1,76 @@
 {
 	"sections": {
-		"product-grid": {
-			"type": "product-grid",
+		"main-slider": {
+			"type": "main-slider",
 			"blocks": {
-				"mate-y-bombilla": {
-					"type": "product",
+				"merienda-criolla": {
+					"type": "slide",
 					"settings": {
-						"product": "mate-y-bombilla"
+						"image": "shopify:\/\/shop_images\/merienda.jpg",
+						"title": "Merienda Criolla",
+						"subtitle": "Subtitulo"
 					}
 				},
-				"termo-para-mate": {
-					"type": "product",
+				"cena-japonesa": {
+					"type": "slide",
 					"settings": {
-						"product": "termo-para-mate"
-					}
-				},
-				"kilo-de-yerba-mate": {
-					"type": "product",
-					"settings": {
-						"product": "kilo-de-yerba-mate"
-					}
-				},
-				"palmeritas-hojalmar": {
-					"type": "product",
-					"settings": {
-						"product": "palmeritas-hojalmar"
-					}
-				},
-				"sushi": {
-					"type": "product",
-					"settings": {
-						"product": "sushi"
+						"image": "shopify:\/\/shop_images\/cena_japonesa.jpg",
+						"title": "Cena Japonesa",
+						"subtitle": "Subtitulo"
 					}
 				}
 			},
 			"block_order": [
-				"mate-y-bombilla",
-				"termo-para-mate",
-				"kilo-de-yerba-mate",
-				"palmeritas-hojalmar",
-				"sushi"
-			]
-		}
-	},
-	"order": [
-		"product-grid"
-	]
-}
+				"merienda-criolla",
+				"cena-japonesa"
+			],
+			"settings": {}
+		},
+			"product-grid": {
+				"type": "product-grid",
+				"blocks": {
+					"mate-y-bombilla": {
+						"type": "product",
+						"settings": {
+							"product": "mate-y-bombilla"
+						}
+					},
+					"termo-para-mate": {
+						"type": "product",
+						"settings": {
+							"product": "termo-para-mate"
+						}
+					},
+					"kilo-de-yerba-mate": {
+						"type": "product",
+						"settings": {
+							"product": "kilo-de-yerba-mate"
+						}
+					},
+					"palmeritas-hojalmar": {
+						"type": "product",
+						"settings": {
+							"product": "palmeritas-hojalmar"
+						}
+					},
+					"sushi": {
+						"type": "product",
+						"settings": {
+							"product": "sushi"
+						}
+					}
+				},
+				"block_order": [
+					"mate-y-bombilla",
+					"termo-para-mate",
+					"kilo-de-yerba-mate",
+					"palmeritas-hojalmar",
+					"sushi"
+				]
+			}
+		},
+		"order": [
+			"main-slider",
+			"product-grid"
+		]
+	}
