@@ -1,70 +1,49 @@
 {
 	"sections": {
-		"main-slider": {
-			"type": "main-slider",
-			"blocks": {
-				"19dd6baa-4089-4616-bab2-3f4c5f795e0c": {
-					"type": "product",
-					"settings": {
-						"product": "kilo-de-yerba-mate"
-					}
-				},
-				"890614dd-e169-4c23-ad42-350c2963a76c": {
-					"type": "product",
-					"settings": {
-						"product": "palmeritas-hojalmar"
-					}
-				}
-			},
-			"block_order": [
-				"19dd6baa-4089-4616-bab2-3f4c5f795e0c",
-				"890614dd-e169-4c23-ad42-350c2963a76c"
-			],
-			"settings": {
-				"collection": "merienda-criolla"
-			}
-		},
 		"product-grid": {
 			"type": "product-grid",
 			"blocks": {
-				"6b76f072-f698-4a11-8484-8887c09de672": {
+				"mate-y-bombilla": {
 					"type": "product",
 					"settings": {
 						"product": "mate-y-bombilla"
 					}
 				},
-				"e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71": {
+				"termo-para-mate": {
 					"type": "product",
 					"settings": {
 						"product": "termo-para-mate"
 					}
 				},
-				"582de0a9-59c8-4182-985d-4cb9b1493f54": {
+				"kilo-de-yerba-mate": {
 					"type": "product",
 					"settings": {
 						"product": "kilo-de-yerba-mate"
 					}
 				},
-				"16bbcddd-fa24-457c-9833-7c7e42a69b85": {
+				"palmeritas-hojalmar": {
 					"type": "product",
 					"settings": {
 						"product": "palmeritas-hojalmar"
 					}
+				},
+				"sushi": {
+					"type": "product",
+					"settings": {
+						"product": "sushi"
+					}
 				}
 			},
 			"block_order": [
-				"6b76f072-f698-4a11-8484-8887c09de672",
-				"e4d590e5-ed47-4f3a-b8bc-6b9e6256aa71",
-				"582de0a9-59c8-4182-985d-4cb9b1493f54",
-				"16bbcddd-fa24-457c-9833-7c7e42a69b85"
-			],
-			"settings": {
-				"collection": "merienda-criolla"
-			}
+				"mate-y-bombilla",
+				"termo-para-mate",
+				"kilo-de-yerba-mate",
+				"palmeritas-hojalmar",
+				"sushi"
+			]
 		}
 	},
 	"order": [
-		"main-slider",
 		"product-grid"
 	]
 }

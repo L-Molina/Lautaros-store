@@ -1,4 +1,9 @@
-<h1>{{ collection.title }}</h1>
+<div class="collection-container">
+  <h1 class="collection-title">
+    {{ collection.title }}
+  </h1>
+  
+</div>
 
 {% paginate section.settings.collection.products by 10 %}
   {% for product in section.settings.collection.products %}
