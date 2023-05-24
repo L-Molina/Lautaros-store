@@ -1,48 +1,52 @@
 <footer class="footer">
   <div class="footer-container">
-    <div class="title-description">
-      <h4 class="footer-title">
-        {{ section.settings.brand_name }}
-      </h4>
-      <h5 class="footer-description">
-        {{ section.settings.footer_description }}
-      </h5>
+    <div class="title-social-wrapper">
+      <div class="title-description">
+        <h4 class="footer-title">
+          {{ section.settings.brand_name }}
+        </h4>
+        <h5 class="footer-description">
+          {{ section.settings.footer_description }}
+        </h5>
+      </div>
+      <div class="footer-social">
+        {% for block in section.blocks %}
+            {% if block.type == 'footer_social' %}
+                {% if block.settings.title == "twitter" %}
+                  <a href="{{ link.handle }}" class="social-icon">
+                    {% render 'icon-twitter' %}
+                  </a>  
+                {% endif %}
+                {% if block.settings.title == "facebook" %} 
+                  <a href="{{ link.handle }}" class="social-icon">
+                    {% render 'icon-facebook' %}
+                  </a>  
+                {% endif %}
+                {% if block.settings.title == "instagram" %}
+                  <a href="{{ link.handle }}" class="social-icon">
+                    {% render 'icon-instagram' %}
+                  </a>  
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    <div class="social-menu">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'footer_social' %}
-              {% if block.settings.title == "twitter" %}
-                <a href="{{ link.handle }}" class="social-icon">
-                  {% render 'icon-twitter' %}
-                </a>  
-              {% endif %}
-              {% if block.settings.title == "facebook" %} 
-                <a href="{{ link.handle }}" class="social-icon">
-                  {% render 'icon-facebook' %}
-                </a>  
-              {% endif %}
-              {% if block.settings.title == "instagram" %}
-                <a href="{{ link.handle }}" class="social-icon">
-                  {% render 'icon-instagram' %}
-                </a>  
-              {% endif %}
-          {% when 'footer_menu' %} 
-            <div class="footer-menu">
+      <div class="footer-menu">
+        {% for block in section.blocks %}
+          {% if block.type == 'footer_menu' %}
               <ul class="secondary-menu">
                 <h3 class="menu-title">{{ block.settings.menu_links.title}}</h3>
                   {% for link in block.settings.menu_links.links %}
-                      <li>
+                      <li class="link-container">
                         <a href="{{ link.handle }}" class="menu-link">
                           {{ link.title }}
                         </a>
                       </li>
                   {% endfor %}
               </ul>
-            </div>
-          {% endcase %}
+          {% endif %}
         {% endfor %}
-      </div>	
+      </div>
     </div>
     <div class="website-rights">
       <small>© 2023, Lautaro's Store Powered by Shopify</small>

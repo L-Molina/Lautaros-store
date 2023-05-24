@@ -198,9 +198,18 @@ table {
   top: 0px;
 }
 
+.cart-icon {
+  color: #23A6F0;
+}
+
+.cart-icon:hover{
+  color: deepskyblue;
+  transition: all 0.1s ease-in-out;
+}
+
 .cart-button:hover {
-  font-size: 25px;
-  transition: all 0.2s ease-in-out;
+  color: deepskyblue;
+  transition: all 0.1s ease-in-out;
 }
 
 .footer {
@@ -218,31 +227,50 @@ table {
 }
 
 .footer-menu {
-  width: 100%;
-  max-width: 1000px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 800px;
   text-align: left;
   box-sizing: border-box;
+}
+
+.secondary-menu {
+  padding-bottom: 25px;
+}
+
+.title-social-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+}
+
+.title-description {
+  margin: 0 0 0 40px;
+}
+
+.footer-social {
+  margin: 0 65px 0 0;
 }
 
 .social-icon {
   width: 23px;
   height: 23px;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  margin: 8px;
+  margin: 0 8px 0 0 ;
   color: #23A6F0;
   cursor: pointer;
 }
 
 .social-icon:hover {
   color: deepskyblue;
+  text-decoration: none;
   transition: all 0.1s ease-in-out;
 }
 
 .footer-title {
   width: 140px;
   height: 18px;
+  font-size: 18px;
   color: black;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
@@ -250,7 +278,15 @@ table {
   cursor: pointer;
 }
 
+.footer-title:hover {
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
 .footer-description {
+  width: 211px;
+  margin: 25px 0 25px 0;
   color: #737373;
   font-size: 14px;
 }
@@ -260,6 +296,7 @@ table {
   font-size: 24px;
   line-height: 32px;
   color: #252B42;
+  margin-bottom: 20px;
 }
 
 .menu-link {
@@ -277,6 +314,10 @@ table {
   transition: all 0.1s ease-in-out;
 }
 
+.link-container {
+  margin-top: 10px;
+}
+
 .footer-container {
   width: 1440px;
   display: grid;
@@ -285,7 +326,11 @@ table {
 }
 
 .website-rights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 1440px;
+  margin: 25px 0 27px 0;
 }
 
 small {
@@ -298,7 +343,6 @@ small {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 30%;
   background-color: white;
 }
 
@@ -321,7 +365,7 @@ small {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, auto);
-  padding: 0.3rem 0.8rem;
+  padding: 1.3rem 0.8rem;
 }
 
 .product-card {
@@ -338,12 +382,12 @@ small {
 }
 
 .grid-subtitle {
-  color: gray;
+  color: #737373;
   margin: 20px;
 }
 
 .grid-title {
-  color: black;
+  color: #252B42;
   font-size: 33px;
 }
 

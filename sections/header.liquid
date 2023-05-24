@@ -7,13 +7,11 @@
      	<a class="nav-button" href="{{ link.handle }}">{{ link.title }}</a>
     {% endfor %}
   </div>
-  <div class="cart-button-container">
-    <button class="cart-button" @click="toggleMiniCart">
-      <span>
-        {% render 'cart-icon' %} 
+  <div class="cart-button">
+      <span class="cart-icon" @click="toggleMiniCart">
+        {% render 'cart-icon' %}
       </span>
       0
-    </button>
   </div>
 </header>
 
