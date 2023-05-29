@@ -1,18 +1,39 @@
 {% if section.blocks.size > 1 %}
-	{% for block in section.blocks %}
-		<div class="swiper-slide">
-			<div class="text-link-wrapper">
-				<h3 class="slide-subtitle">
-					{{ block.settings.subtitle }}
-				</h3>
-				<h1 class="slide-title">
-					{{ block.settings.title }}
-				</h1>
+	<div class="main-slider">
+		{% for block in section.blocks %}
+			<div class="swiper-slide" style="width: 1440px; height: 716px;">
+				<div class="text-link-wrapper">
+					<h3 class="slide-subtitle">
+						{{ block.settings.subtitle }}
+					</h3>
+					<h1 class="slide-title">
+						{{ block.settings.title }}
+					</h1>
+					<h4 class="slide-description">
+						{{ block.settings.description }}
+					</h4>
+				</div>
+				<div class="arrow-wrapper">
+					<a class="arrow-prev">&#10094;</a>
+  				<a class="arrow-next">&#10095;</a>
+				</div>
+				<div class="page-wrapper">
+					<span class="bar" onclick="currentSlide(1)"></span>
+					<span class="bar" onclick="currentSlide(2)"></span>
+  				<span class="bar" onclick="currentSlide(3)"></span>
+  				<span class="bar" onclick="currentSlide(4)"></span>
+				</div>
+				<div class="image-wrapper">
+					{{ block.settings.image | image_url: width: 1440 | image_tag: width: 1440 }}
+				</div>
 			</div>
-			{{ block.settings.image | image_url: width: 1440 | image_tag: width: 1440 }}
-		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
 {% endif %}
+
+{% comment %}
+background-image: url(../assets/merienda.jpg);
+{% endcomment %}
 
 {% schema %}
 {
@@ -39,6 +60,12 @@
 					"id": "subtitle",
 					"label": "subtitle",
 					"default": "Subtitulo"
+				},
+				{
+					"type": "text",
+					"id": "description",
+					"label": "description",
+					"default": "Descripcion"
 				}
       ]
     }
