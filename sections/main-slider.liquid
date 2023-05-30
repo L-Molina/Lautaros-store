@@ -1,35 +1,54 @@
-{% if section.blocks.size > 1 %}
-	<div class="main-slider">
-		{% for block in section.blocks %}
-			<div class="swiper-slide" style="width: 1440px; height: 716px;">
-				<div class="text-link-wrapper">
-					<h3 class="slide-subtitle">
-						{{ block.settings.subtitle }}
-					</h3>
-					<h1 class="slide-title">
-						{{ block.settings.title }}
-					</h1>
-					<h4 class="slide-description">
-						{{ block.settings.description }}
-					</h4>
+<script type="module">
+	const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+</script>
+<div class="swiper">
+	{% if section.blocks.size > 1 %}
+		<div class="main-slider swiper-wrapper">
+			{% for block in section.blocks %}
+				<div class="swiper-slide" style="width: 1440px; height: 716px;">
+					<div class="text-link-wrapper">
+						<p class="slide-subtitle">
+							{{ block.settings.subtitle }}
+						</p>
+						<p class="slide-title">
+							{{ block.settings.title }}
+						</p>
+						<p class="slide-description">
+							{{ block.settings.description }}
+						</p>
+						<div class="slide-link">
+							<a href="{{ link.handle }}" class="link-text">
+								{{ block.settings.button }}
+							</a>
+						</div>
+					</div>
+					<div class="arrow-wrapper">
+						<span class="swiper-button-prev">
+						</span>
+						<span class="swiper-button-next">
+						</span>
+					</div>
+					<div class="page-wrapper">
+						{% for block in section.blocks %}
+							<span class="bar swiper-pagination" onclick="currentSlide(1)"></span>
+						{% endfor %}
+					</div>
+					<div class="image-wrapper">
+						{{ block.settings.image | image_url: width: 1440 | image_tag: width: 1440 }}
+					</div>
 				</div>
-				<div class="arrow-wrapper">
-					<a class="arrow-prev">&#10094;</a>
-  				<a class="arrow-next">&#10095;</a>
-				</div>
-				<div class="page-wrapper">
-					<span class="bar" onclick="currentSlide(1)"></span>
-					<span class="bar" onclick="currentSlide(2)"></span>
-  				<span class="bar" onclick="currentSlide(3)"></span>
-  				<span class="bar" onclick="currentSlide(4)"></span>
-				</div>
-				<div class="image-wrapper">
-					{{ block.settings.image | image_url: width: 1440 | image_tag: width: 1440 }}
-				</div>
-			</div>
-		{% endfor %}
-	</div>
-{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+
 
 {% comment %}
 background-image: url(../assets/merienda.jpg);
@@ -66,6 +85,17 @@ background-image: url(../assets/merienda.jpg);
 					"id": "description",
 					"label": "description",
 					"default": "Descripcion"
+				},
+				{
+					"type": "text",
+					"id": "button",
+					"label": "button",
+					"default": "VER AHORA"
+				},
+				{
+					"type": "url",
+					"id": "link",
+					"label": "link"
 				}
       ]
     }
