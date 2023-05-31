@@ -1,0 +1,87 @@
+{% for block in section.blocks %}
+	{% case block.type %}
+		{% when 'product' %}
+			<div class="pdp-container">
+				<div class="pdp-image-wrapper">
+					{{ block.settings.image | image_url: width: image.width | image_tag: class: 'product-image', loading: 'lazy' }}
+				</div>
+				<div class="pdp-text-buttons-wrapper">
+					<div class="pdp-tetxt-wrapper">
+						<p class="pdp-title">
+							{{ block.settings.title }} 
+						</p>
+						<p class="pdp-price">
+							{{ block.settings.precio }} 
+						</p>
+						<p class="pdp-description">
+							{{ block.settings.description }} 
+						</p>
+					</div>
+					<div class="pdp-buttons-wrapper">
+						<div class="pdp-numbers">
+							{{ block.settings.numbers }} 
+						</div>
+					</div>
+				</div>
+			</div>
+	{% endcase %}
+{% endfor %}
+
+
+{% schema %}
+{
+	"name": "Code In Shopify Section",
+	"settings": [],
+	"blocks": [
+	{
+		"name": "Image-gallery",
+		"type": "image-gallery",
+		"settings": [
+			{
+				"type": "image_picker",
+				"id": "image",
+				"label": "image"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_1",
+				"label": "image 1"
+			},
+			{
+				"type": "image_picker",
+				"id": "image_2",
+				"label": "image 2"
+			}
+		]
+	},
+	{
+		"name": "Product",
+		"type": "product",
+		"settings": [
+			{
+				"type": "text",
+				"id": "title",
+				"label": "title",
+				"default": "Titulo"
+			},
+			{
+				"type": "text",
+				"id": "precio",
+				"label": "precio",
+				"default": "$0.00"
+			},
+			{
+				"type": "text",
+				"id": "description",
+				"label": "description"
+			},
+			{
+				"type": "number",
+				"id": "numbers",
+				"label": "numbers"
+			}
+		]
+	}
+]
+}  
+{% endschema %}

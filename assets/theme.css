@@ -123,9 +123,13 @@ table {
   border-spacing: 0;
 }
 
+/* Page */
+
 .page-container {
   max-width: 1440px;
 }
+
+/* Header */
 
 .header {
   display: grid;
@@ -157,7 +161,7 @@ table {
   color: black;
   font-size: 22px;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .navigation {
@@ -183,7 +187,7 @@ table {
 .nav-button:hover {
   color: black;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .cart-button {
@@ -208,13 +212,15 @@ table {
 
 .cart-icon:hover{
   color: deepskyblue;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .cart-button:hover {
   color: deepskyblue;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
+
+/* Footer */
 
 .footer {
   padding: 4rem 0 2rem 0;
@@ -222,7 +228,7 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: #F9F9F9;
   border-top: 1px solid gray;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
@@ -268,7 +274,7 @@ table {
 .social-icon:hover {
   color: deepskyblue;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .footer-title {
@@ -285,7 +291,7 @@ table {
 .footer-title:hover {
   font-size: 20px;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .footer-description {
@@ -315,7 +321,7 @@ table {
   opacity: 75;
   color: #252B42;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .link-container {
@@ -342,6 +348,8 @@ small {
   font-size: 14px;
   margin-bottom: 16px;
 }
+
+/* Main Slider */
 
 .swiper {
   width: 1440px;
@@ -374,7 +382,7 @@ small {
   padding: 17px 12px 15px 10px;
   color: white;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 5px;
   user-select: none;
 }
 
@@ -406,7 +414,7 @@ small {
   gap: 35px;
   position: relative;
   z-index: 5;
-  color: white;
+  color: #FAFAFA;
 }
 
 .slide-title {
@@ -426,7 +434,10 @@ small {
 }
 
 .slide-description {
+  width: 376px;
   font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.2px;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
@@ -508,6 +519,8 @@ small {
   to {opacity: 1}
 }
 
+/* Product Grid */
+
 .product-grid-container {
   display: flex;
   flex-direction: column;
@@ -532,15 +545,21 @@ small {
 
 .product-card {
   height: 589px;
-  width: 239px;
+  width: 248px;
   display: flex;
   box-shadow: none;
   flex-direction: column;
+  cursor: pointer;
   align-items: center;
   padding: 0.3rem 0.8rem;
   margin-bottom: 16px;
   margin-left: 50px;
   border: 2px solid whitesmoke;
+}
+
+.product-card:hover {
+  background-color: #F9F9F9;
+  transition: 0.4s ease;
 }
 
 .grid-subtitle {
@@ -569,3 +588,6 @@ small {
   height: 427px;
   padding-top: 80px
 }
+
+/* Product Page */
+
