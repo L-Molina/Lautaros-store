@@ -6,7 +6,7 @@
 					{{ block.settings.image | image_url: width: image.width | image_tag: class: 'product-image', loading: 'lazy' }}
 				</div>
 				<div class="pdp-text-buttons-wrapper">
-					<div class="pdp-tetxt-wrapper">
+					<div class="pdp-text-wrapper">
 						<p class="pdp-title">
 							{{ block.settings.title }} 
 						</p>
@@ -21,6 +21,9 @@
 						<div class="pdp-numbers">
 							{{ block.settings.numbers }} 
 						</div>
+						<div class="pdp-buy-button">
+							<button></button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -34,7 +37,7 @@
 	"settings": [],
 	"blocks": [
 	{
-		"name": "Image-gallery",
+		"name": "image-gallery",
 		"type": "image-gallery",
 		"settings": [
 			{
