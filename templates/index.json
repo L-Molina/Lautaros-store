@@ -1,31 +1,38 @@
 {
 	"sections": {
 		"main-slider": {
-			"type": "main-slider",
-			"blocks": {
-				"merienda-criolla": {
-					"type": "slide",
-					"settings": {
-						"image": "shopify:\/\/shop_images\/merienda.jpg",
-						"title": "Merienda Criolla",
-						"subtitle": "Subtitulo"
-					}
-				},
-				"cena-japonesa": {
-					"type": "slide",
-					"settings": {
-						"image": "shopify:\/\/shop_images\/cena_japonesa.jpg",
-						"title": "Cena Japonesa",
-						"subtitle": "Subtitulo"
-					}
-				}
-			},
-			"block_order": [
-				"merienda-criolla",
-				"cena-japonesa"
-			],
-			"settings": {}
-		},
+      "type": "main-slider",
+      "blocks": {
+        "merienda-criolla": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/merienda.jpg",
+            "title": "Merienda Criolla",
+            "subtitle": "Un clásico nacional!",
+            "description": "Adquirí todo lo que necesitás para tener toda la experiencia Argentina en tu merienda.",
+            "button": "VER AHORA",
+            "link": "shopify:\/\/collections\/coleccion-merienda-criolla"
+          }
+        },
+        "cena-japonesa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cena_japonesa.jpg",
+            "title": "Cena Japonesa",
+            "subtitle": "Para los de gustos exóticos.",
+            "description": "Tenemos lo que estas buscando para que consigas esa experiencia del extranjero desde tu casa!",
+            "button": "VER AHORA",
+            "link": "shopify:\/\/collections\/cena-japonesa"
+          }
+        }
+      },
+      "block_order": [
+        "merienda-criolla",
+        "cena-japonesa"
+      ],
+      "settings": {
+      }
+    },
 			"product-grid": {
 				"type": "product-grid",
 				"blocks": {

@@ -37,7 +37,7 @@
 					</div>
 					<div class="page-wrapper">
 						{% for block in section.blocks %}
-							<span class="bar swiper-pagination" onclick="currentSlide(1)"></span>
+							<span class="bar swiper-pagination" onclick="currentSlide('{{ block.settings.size }}')"></span>
 						{% endfor %}
 					</div>
 					<div class="image-wrapper">
