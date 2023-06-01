@@ -3,16 +3,11 @@
 		"main-product": {
 			"type": "main-product",
 			"blocks": {
-				"image-gallery": {
-					"image": "image",
-					"image_1": "image_1",
-					"image_2": "image_2"
-				},
 				"product": {
-					"title": "titulo",
-					"price": "precio",
-					"description": "descripción",
-					"numbers": "1"
+					"type": "product",
+					"settings": {
+						"product": "product"
+					}
 				}
 			},
 			"block-order": [

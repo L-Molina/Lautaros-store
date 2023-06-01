@@ -614,26 +614,41 @@ small {
 .pdp-container {
   max-width: 1440px;
   width: auto;
-  height: 646px;
+  height: fit-content;
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+}
+
+.pdp-image {
+  width: 510px;
+  height: auto;
+  margin-top: 75px;
 }
 
 .pdp-image-wrapper {
-  width: 510px;
-  height: 450px;
   left: 0px;
   right: 0px;
-  top: 0px;
+  top: opx;
   bottom: 0px;
+  padding-left: 195px;
+  border: #5f5f5f 1px;
 }
 
 .pdp-text-buttons-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  margin-top: 75px;
+  margin-left: 20px;
+  width: 510px;
+  height: 471px;
 }
 
 .pdp-text-wrapper {
+  line-height: 30px;
+  letter-spacing: 0.2px;
+  justify-content: space-between;
   color: #252B42;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
@@ -641,8 +656,8 @@ small {
 }
 
 .pdp-title {
-  position: absolute;
-  width: 156px;
+  max-width: 256px;
+  width: auto;
   height: 30px;
   left: 24px;
   top: 11px;
@@ -656,7 +671,7 @@ small {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.1px;
 }
 
@@ -665,6 +680,8 @@ small {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.2px;
+  color: #858585;
+  max-width: 464px;
 }
 
 .pdp-buttons-wrapper {
@@ -672,14 +689,44 @@ small {
   flex-direction: row;
 }
 
-.pdp-numbers {
-  border: #737373 1px;
-  background-color: darkgray;
+.pdp-numbers input {
+  width: 150px;
+  height: 44px;
+  background: #F9F9F9;
+  border: 1px solid #DDDDDD;
+  border-radius: 3px;
   color: #252B42;
 }
 
-.pdp-buy-button {
+.pdp-buy-button input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
   background-color: #23A6F0;
   border-radius: 3px;
   color: #FFFFFF;
+  width: 289px;
+  text-align: center;
+  margin-left: 25px;
+  height: 44px;
+  font-size: 14px;
+  border: none;
+  line-height: 24px;
+  font-family: 'Trebuchet MS', 
+    'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.pdp-buy-button input:hover {
+  background-color: #2296d9;
+  transition: 0.3s ease;
+}
+
+hr {
+  color: #BDBDBD;
+  width: 445px;
+  height: 1px;
+  align-self: left;
 }

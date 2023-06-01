@@ -1,87 +1,46 @@
-{% for block in section.blocks %}
-	{% case block.type %}
-		{% when 'product' %}
-			<div class="pdp-container">
-				<div class="pdp-image-wrapper">
-					{{ block.settings.image | image_url: width: image.width | image_tag: class: 'product-image', loading: 'lazy' }}
+{% form 'product', product %}
+	<div class="pdp-container">
+		<div class="pdp-image-wrapper">
+			{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+		</div>
+		<div class="pdp-text-buttons-wrapper">
+			<div class="pdp-text-wrapper">
+				<h1 class="pdp-title">
+					{{ product.title }} 
+				</h1>
+				<h3 class="pdp-price">
+					{{ product.price | money }} 
+				</h3>
+				<p class="pdp-description">
+					{{ product.description }} 
+				</p>
+			</div>
+			<hr />
+			<div class="pdp-buttons-wrapper">
+				<div class="pdp-numbers">
+					<input type="text" name="quantity" min="1" max="{{ product.numbers }}" value="1">
 				</div>
-				<div class="pdp-text-buttons-wrapper">
-					<div class="pdp-text-wrapper">
-						<p class="pdp-title">
-							{{ block.settings.title }} 
-						</p>
-						<p class="pdp-price">
-							{{ block.settings.precio | money }} 
-						</p>
-						<p class="pdp-description">
-							{{ block.settings.description }} 
-						</p>
-					</div>
-					<div class="pdp-buttons-wrapper">
-						<div class="pdp-numbers">
-							{{ block.settings.numbers }} 
-						</div>
-						<div class="pdp-buy-button">
-							<button></button>
-						</div>
-					</div>
+				<div class="pdp-buy-button">
+					<input type="submit" value="Agregar al carrito">
 				</div>
 			</div>
-	{% endcase %}
-{% endfor %}
-
+		</div>
+	</div>
+{% endform %}
 
 {% schema %}
 {
-	"name": "Code In Shopify Section",
+	"name": "main-product",
 	"settings": [],
 	"blocks": [
-	{
-		"name": "image-gallery",
-		"type": "image-gallery",
-		"settings": [
-			{
-				"type": "image_picker",
-				"id": "image",
-				"label": "image"
-			},
-			{
-				"type": "image_picker",
-				"id": "image_1",
-				"label": "image 1"
-			},
-			{
-				"type": "image_picker",
-				"id": "image_2",
-				"label": "image 2"
-			}
-		]
-	},
 	{
 		"name": "Product",
 		"type": "product",
 		"settings": [
 			{
-				"type": "text",
-				"id": "title",
-				"label": "title",
-				"default": "Titulo"
-			},
-			{
-				"type": "text",
-				"id": "precio",
-				"label": "precio",
-				"default": "$0.00"
-			},
-			{
-				"type": "text",
-				"id": "description",
-				"label": "description"
-			},
-			{
-				"type": "number",
-				"id": "numbers",
-				"label": "numbers"
+			"type": "product",
+			"id": "product",
+			"label": "Product"
 			}
 		]
 	}
