@@ -537,6 +537,7 @@ small {
 }
 
 .product-grid {
+  max-width: 1440px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -548,6 +549,7 @@ small {
   width: 248px;
   display: flex;
   box-shadow: none;
+  color: #252B42;
   flex-direction: column;
   cursor: pointer;
   align-items: center;
@@ -573,20 +575,38 @@ small {
 }
 
 .product-title {
+  text-align: center;
+  color: #252B42;
   font-weight: lighter;
   font-size: smaller;
 }
 
 .product-price {
+  text-align: center;
   font-weight: bold;
   font-size: smaller;
   color: #23856D;
+}
+
+.product-title:hover {
+  color: #252B42;
+  transition: 0.4s ease;
+}
+
+.product-price:hover {
+  color: #23856D;
+  transition: 0.4s ease;
 }
 
 .product-image {
   width: 235px;
   height: 427px;
   padding-top: 80px
+}
+
+.product-grid a:hover {
+  text-decoration: none;
+  transition: 0.4s ease;
 }
 
 /* Product Page */

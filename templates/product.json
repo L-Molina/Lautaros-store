@@ -14,7 +14,14 @@
 					"description": "descripción",
 					"numbers": "1"
 				}
-			}
+			},
+			"block-order": [
+				"image-gallery",
+				"product"
+			]
 		}
-	}
+	},
+	"order": [
+		"main-product"
+	]
 }

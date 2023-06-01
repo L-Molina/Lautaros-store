@@ -39,31 +39,36 @@
 					"mate-y-bombilla": {
 						"type": "product",
 						"settings": {
-							"product": "mate-y-bombilla"
+							"product": "mate-y-bombilla",
+							"link": "shopify:\/\/products\/mate-y-bombilla"
 						}
 					},
 					"termo-para-mate": {
 						"type": "product",
 						"settings": {
-							"product": "termo-para-mate"
+							"product": "termo-para-mate",
+							"link": "shopify:\/\/products\/termo-para-mate"
 						}
 					},
 					"kilo-de-yerba-mate": {
 						"type": "product",
 						"settings": {
-							"product": "kilo-de-yerba-mate"
+							"product": "kilo-de-yerba-mate",
+							"link": "shopify:\/\/products\/kilo-de-yerba-mate"
 						}
 					},
 					"palmeritas-hojalmar": {
 						"type": "product",
 						"settings": {
-							"product": "palmeritas-hojalmar"
+							"product": "palmeritas-hojalmar",
+							"link": "shopify:\/\/products\/palmeritas-hojalmar"
 						}
 					},
 					"sushi": {
 						"type": "product",
 						"settings": {
-							"product": "sushi"
+							"product": "sushi",
+							"link": "shopify:\/\/products\/sushi"
 						}
 					}
 				},
