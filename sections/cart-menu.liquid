@@ -1,9 +1,18 @@
-<form action="{{ routes.cart_url }}" method="post">
-  {% for item in cart.items %}
-		<a href="{{ item.url_to_remove }}">Remove</a>
-  {% endfor %}
-	<input type="text" name="updates[]" value="{{ item.quantity }}">
-	<input type="submit" value="Update cart">
-	<textarea name="note"></textarea>
-  <input type="submit" name="checkout" value="Checkout" />
-</form>
+<div class="cart-menu">
+	<form class="cart-form" action="{{ routes.cart_url }}" method="post">
+		{% for item in cart.items %}
+			  <a href="{{ item.url_to_remove }}">Remove</a>
+		{% endfor %}
+		<input type="text" name="updates[]" value="{{ item.quantity }}">
+		<input type="submit" value="Update cart">
+		<textarea name="note"></textarea>
+		<input type="submit" name="checkout" value="Checkout" />
+	</form>
+</div>
+
+{% schema %}
+{
+	"name": "cart-menu",
+	"settings": []
+}
+{% endschema %}
