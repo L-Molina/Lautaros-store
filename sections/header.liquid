@@ -1,5 +1,5 @@
 <header class="header" id="header">
-  <a class="header-title" src="/home">
+  <a class="header-title" href="{{ link.handle }}">
     {{ section.settings.brand_name }}
   </a>
   <div class="navigation" id="navigation">
@@ -7,11 +7,17 @@
      	<a class="nav-button" href="{{ link.handle }}">{{ link.title }}</a>
     {% endfor %}
   </div>
-  <div class="cart-button">
-      <span class="cart-icon" @click="toggleMiniCart">
-        {% render 'cart-icon' %}
-      </span>
-      0
+  <div class="cart-wrapper">
+    <a href="{{ link.handle }}">
+      <div class="cart-button">
+        <span class="cart-icon" @click="toggleMiniCart">
+          {% render 'cart-icon' %}
+        </span>
+        <p class="item-count">
+          {{ cart.item_count }}
+        </p>
+      </div>
+    </a> 
   </div>
 </header>
 
@@ -25,6 +31,11 @@
       "type": "image_picker",
       "id": "header_logo",
       "label": "Logo"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "link"
     },
     {
       "type": "text",

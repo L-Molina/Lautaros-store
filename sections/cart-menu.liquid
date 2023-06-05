@@ -1,18 +1,51 @@
 <div class="cart-menu">
 	<form class="cart-form" action="{{ routes.cart_url }}" method="post">
-		{% for item in cart.items %}
-			  <a href="{{ item.url_to_remove }}">Remove</a>
-		{% endfor %}
-		<input type="text" name="updates[]" value="{{ item.quantity }}">
-		<input type="submit" value="Update cart">
-		<textarea name="note"></textarea>
-		<input type="submit" name="checkout" value="Checkout" />
+		<h1 class="cart-title">
+			CARRITO
+		</h1>
+		<div class="items-wrapper">
+			<div class="chart-top">
+				<p class="chart-product">Producto</p>
+				<p class="chart-price">Precio (c/u)</p>
+				<p class="chart-quant">Cantidad</p>
+				<p class="chart-subtotal">Subtotal</p>
+			</div>
+			{% for item in cart.items %}
+				<div class="cart-item">
+					<div class="cart-image-wrapper">
+						<img class="item-image" src="{{ item.image | image_url: width: item.image.width }}" alt="Imagen no Disponible">		
+					</div>
+					<h3 class="item-title">
+						{{ item.title }}
+					</h3>
+					<h4 class="item-price">
+						{{ item.price | money }}
+					</h4>
+					<div class="item-quant">
+						<input type="number" name="quantity" min="1" value="{{ item.quantity }}">
+					</div>
+					<h5 class="item-subtotal">
+						{{ item.final_price | money }}
+					</h5>
+					<a class="remove-button" href="{{ item.url_to_remove }}">
+						QUITAR
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="input-wrapper">
+			<div class="update-wrapper">
+				<h4 class="update-title">Actualizar Carrito</h4>
+				<input class="update-input" type="text" name="updates[]" value="{{ item.quantity }}">
+				<input class="update-button" type="submit" value="Listo">
+			</div>
+			<div class="details">
+				<h4 class="details-title">Detalles</h4>
+				<textarea class="details-text" name="note"></textarea>
+			</div>
+			<div class="checkout">
+				<input type="submit" name="checkout" value="Checkout" />
+			</div>
+		</div>
 	</form>
 </div>
-
-{% schema %}
-{
-	"name": "cart-menu",
-	"settings": []
-}
-{% endschema %}

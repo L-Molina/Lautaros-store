@@ -1,16 +1,61 @@
+<script>
+	const form = document.querySelector('form')
+	
+	form.addEventListener('submit', (e) => {
+      e.preventDefault()
+			const formData = { 
+				"items": [
+	  			{
+	   				"id": '{{ product.variant.id }}',
+	   				"quantity": 1
+	  			}	
+				]
+			}
+			fetch(`/cart/add.js`, {
+				method: 'POST', 
+				body: formData}).then((response) => 
+					response.json()).then((response) => {
+					console.log(response)
+			})})
+</script>
 {% form 'product', product %}
 	<div class="pdp-container">
-		<div class="pdp-image-wrapper">
-			{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+		<div class="pdp-image-variants-wrapper">
+			<div class="pdp-image-wrapper">
+				{% if product.has_only_default_variant %}
+					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+				{% else %}
+					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+				{% endif %}
+			</div>
+			<div class="pdp-variants-wrapper">
+				{% unless product.has_only_default_variant %}
+				<p class="pdp-variants-title">
+					Variantes:
+				</p>
+				<select name="id" class="pdp-variants">
+					{% for variant in product.variants %}
+						<option value="{{ variant.id }}"
+							{% if variant == product.selected_or_first_available_variant %}
+								selected="selected"
+							{% endif %}>
+							{{ variant.title }} - {{ variant.price | money }}
+						</option>
+					{% endfor %}
+				</select>
+				{% endunless %}
+			</div>
 		</div>
 		<div class="pdp-text-buttons-wrapper">
 			<div class="pdp-text-wrapper">
 				<h1 class="pdp-title">
 					{{ product.title }} 
 				</h1>
-				<h3 class="pdp-price">
-					{{ product.price | money }} 
-				</h3>
+				<div class="pdp-price">
+					<h3>
+						{{ product.price | money }} 
+					</h3>
+					</div>
 				<p class="pdp-description">
 					{{ product.description }} 
 				</p>
@@ -18,9 +63,13 @@
 			<hr />
 			<div class="pdp-buttons-wrapper">
 				<div class="pdp-numbers">
-						<input type="number" name="quantity" min="1" value="1">
+				 <p class="numbers-text">
+					Cantidad:
+				 </p>	 
+				 <input type="number" name="quantity" min="1" value="1">
 				</div>
 				<div class="pdp-buy-button">
+					<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 					<input type="submit" value="Agregar al carrito">
 				</div>
 			</div>
