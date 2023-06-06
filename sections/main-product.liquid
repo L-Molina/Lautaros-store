@@ -21,13 +21,6 @@
 {% form 'product', product %}
 	<div class="pdp-container">
 		<div class="pdp-image-variants-wrapper">
-			<div class="pdp-image-wrapper">
-				{% if product.has_only_default_variant %}
-					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
-				{% else %}
-					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
-				{% endif %}
-			</div>
 			<div class="pdp-variants-wrapper">
 				{% unless product.has_only_default_variant %}
 				<p class="pdp-variants-title">
@@ -37,13 +30,20 @@
 					{% for variant in product.variants %}
 						<option value="{{ variant.id }}"
 							{% if variant == product.selected_or_first_available_variant %}
-								selected="selected"
+								selected="true"
 							{% endif %}>
 							{{ variant.title }} - {{ variant.price | money }}
 						</option>
 					{% endfor %}
 				</select>
 				{% endunless %}
+			</div>
+			<div class="pdp-image-wrapper">
+				{% if product.has_only_default_variant %}
+					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+				{% else %}
+					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+				{% endif %}
 			</div>
 		</div>
 		<div class="pdp-text-buttons-wrapper">
@@ -55,7 +55,7 @@
 					<h3>
 						{{ product.price | money }} 
 					</h3>
-					</div>
+				</div>
 				<p class="pdp-description">
 					{{ product.description }} 
 				</p>
@@ -70,7 +70,8 @@
 				</div>
 				<div class="pdp-buy-button">
 					<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-					<input type="submit" value="Agregar al carrito">
+					<input type="submit" value="Agregar al carrito ✓">
+					{{ form | payment_button }}
 				</div>
 			</div>
 		</div>
@@ -87,9 +88,9 @@
 		"type": "product",
 		"settings": [
 			{
-			"type": "product",
-			"id": "product",
-			"label": "Product"
+				"type": "product",
+				"id": "product",
+				"label": "Product"
 			}
 		]
 	}
