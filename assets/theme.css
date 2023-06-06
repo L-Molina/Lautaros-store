@@ -770,7 +770,7 @@ small {
   align-items: center;
   padding: 10px 20px;
   gap: 10px;
-  background-color: #23A6F0;
+  background-color: #1990c6;
   border-radius: 3px;
   color: #FFFFFF;
   width: 289px;
@@ -786,7 +786,7 @@ small {
 }
 
 .pdp-buy-button input:hover {
-  background-color: #2296d9;
+  background-color: #1a6e9f;
   transition: 0.3s ease;
 }
 
@@ -804,20 +804,8 @@ hr {
   align-self: left;
 }
 
-.shopify-payment-button__button {
-  background-color: #23A6F0;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-  line-height: 24px;
-  padding: 10px 20px;
-  font-size: 14px;
-  gap: 10px;
+.shopify-payment-button__button--unbranded {
   height: 48px;
-  width: 309px;
-  cursor: pointer;
   font-family: 'Trebuchet MS', 
     'Lucida Sans Unicode', 'Lucida Grande', 
     'Lucida Sans', Arial, sans-serif;
