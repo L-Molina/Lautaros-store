@@ -1,12 +1,18 @@
 {% form 'product', product %}
 	<div class="pdp-container">
-		<div class="pdp-image-variants-wrapper">
+		<div class="pdp-image-wrapper">
+			{% if product.has_only_default_variant %}
+				{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+			{% else %}
+				{{ product.selected_or_first_available_variant | image_url: width: product.selected_or_first_available_variant.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
+			{% endif %}
+		</div>
+		<div class="pdp-text-buttons-wrapper">
 			<div class="pdp-variants-wrapper">
-				{% unless product.has_only_default_variant %}
 				<p class="pdp-variants-title">
 					Variantes:
 				</p>
-				<select class="pdp-variants" id="product-select" name="id">
+				<select class="pdp-variants" id="product-select" name="id" onchange="">
 					{% for variant in product.variants %}
 						<option value="{{ variant.id }}"
 							{% if variant == product.selected_or_first_available_variant %}
@@ -16,23 +22,13 @@
 						</option>
 					{% endfor %}
 				</select>
-				{% endunless %}
 			</div>
-			<div class="pdp-image-wrapper">
-				{% if product.has_only_default_variant %}
-					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
-				{% else %}
-					{{ product | image_url: width: product.width | image_tag: class: 'pdp-image', loading: 'lazy' }}
-				{% endif %}
-			</div>
-		</div>
-		<div class="pdp-text-buttons-wrapper">
 			<div class="pdp-text-wrapper">
 				<h1 class="pdp-title">
 					{{ product.title }} 
 				</h1>
 				<div class="pdp-price">
-					<h3>
+					<h3 class="price-text">
 						{{ product.selected_or_first_available_variant.price | money }} 
 					</h3>
 				</div>
@@ -58,31 +54,14 @@
 {% endform %}
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
 
-<script>
-	/* const form = document.querySelector('form')
-	
-	form.addEventListener('submit', (e) => {
-      e.preventDefault()
-			const formData = { 
-				"items": [
-	  			{
-	   				"id": '{{ product.variant.id }}',
-	   				"quantity": 1
-	  			}	
-				]
-			}
-			fetch(`/cart/add.js`, {
-				method: 'POST', 
-				body: formData}).then((response) => 
-					response.json()).then((response) => {
-					console.log(response)
-			}
-			)
-		}
-	)*/
+{% if product.variants.size > 1 %}
+	<script>
+	var image = document.getElementsByClassName("pdp-image")
+	var price = document.getElementsByClassName("price-text")
+
 	var selectCallback = function(variant, selector) {
-		console.log(variant, selector)
-		return variant, selector;
+		image.srcset = variant.featured_image.src
+		price = variant.price
 	};
 
 	new Shopify.OptionSelectors('product-select', {
@@ -90,8 +69,8 @@
   	onVariantSelected: selectCallback,
   	enableHistoryState: true
 	});
-</script>
-
+	</script>
+{% endif %}
 
 {% schema %}
 {

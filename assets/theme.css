@@ -711,7 +711,8 @@ small {
   font-weight: 700;
 }
 
-.pdp-variants {
+#product-select {
+  display: block;
   color: #737373;
   background-color: #F9F9F9;
   border: 1px solid #DDDDDD;
