@@ -6,8 +6,7 @@
         "settings": {
           "header_logo": "shopify:\/\/shop_images\/lautaros-store-low-resolution-logo-black-on-transparent-background.png",
           "brand_name": "Lautaro's Store",
-          "menu": "main-menu",
-          "link": "shopify:\/\/products\/mate-y-bombilla"
+          "menu": "main-menu"
         }
       },
       "footer": {
@@ -63,7 +62,7 @@
         ],
         "settings": {
           "brand_name": "Lautaro's Store",
-          "footer-desscription": "Lo que querés encontrar, acá lo tenemos."
+          "footer-description": "Lo que querés encontrar, acá lo tenemos."
         }
       }
     },
