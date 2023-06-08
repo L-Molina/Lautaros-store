@@ -12,7 +12,7 @@
 	{% if section.blocks.size > 1 %}
 		<div class="main-slider swiper-wrapper">
 			{% for block in section.blocks %}
-				<div class="swiper-slide" style="width: 1440px; height: 716px;">
+				<div class="swiper-slide">
 					<div class="text-link-wrapper">
 						<p class="slide-subtitle">
 							{{ block.settings.subtitle }}
@@ -24,7 +24,7 @@
 							{{ block.settings.description }}
 						</p>
 						<div class="slide-link">
-							<a href="{{ link.handle }}" class="link-text">
+							<a href="{{ block.settings.link }}" class="link-text">
 								{{ block.settings.button }}
 							</a>
 						</div>
