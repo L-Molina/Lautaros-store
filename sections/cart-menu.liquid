@@ -13,7 +13,9 @@
 			{% for item in cart.items %}
 				<div class="cart-item">
 					<div class="cart-image-wrapper">
-						<img class="item-image" src="{{ item.image | image_url: width: item.image.width }}" alt="Imagen no Disponible">		
+						<a href="{{ item.url }}">
+							<img class="item-image" src="{{ item.image | image_url: width: item.image.width }}" alt="Imagen no Disponible">
+						</a>
 					</div>
 					<h3 class="item-title">
 						{{ item.title }}
@@ -49,3 +51,28 @@
 		</div>
 	</form>
 </div>
+
+{% schema %}
+{
+	"name": "cart-menu",
+	"blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

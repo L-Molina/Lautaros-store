@@ -140,10 +140,12 @@ table {
 .header {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  width: 1440px;
+  max-width: 1440px;
+  width: auto;
   height: 95px;
   font-size: 1.2rem;
   padding: 40px 27px;
+  gap: 60px;
   position: sticky;
   top: 0; 
   z-index: 999;
@@ -282,7 +284,8 @@ table {
 
 .footer {
   padding: 4rem 0 2rem 0;
-  width: 1440px;
+  max-width: 1440px;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -294,10 +297,18 @@ table {
   font-weight: 800;
 }
 
+.footer-container {
+  width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+}
+
 .footer-menu {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  width: 800px;
+  max-width: 1440px;
+  width: auto;
   text-align: left;
   box-sizing: border-box;
 }
@@ -387,13 +398,6 @@ table {
   margin-top: 10px;
 }
 
-.footer-container {
-  width: 1440px;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 10px;
-}
-
 .website-rights {
   display: flex;
   flex-direction: column;
@@ -462,7 +466,8 @@ small {
 /* Main Slider */
 
 .swiper {
-  width: 1440px;
+  max-width: 1440px;
+  width: auto;
   height: 716px;
 }
 
@@ -557,6 +562,9 @@ small {
 
 .page-wrapper {
   text-align: center;
+  max-width: 1440px;
+  width: auto;
+  height: fit-content;
 }
 
 .bar {
@@ -575,6 +583,11 @@ small {
 
 .active, .bar:hover {
   opacity: 100%;
+}
+
+.arrow-wrapper {
+  max-width: 1440px;
+  width: auto;
 }
 
 .slide-link {
@@ -814,16 +827,19 @@ small {
 .pdp-container {
   max-width: 1440px;
   width: auto;
-  height: 715px;
+  max-height: 825px;
+  height: auto;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
+  margin-bottom: 50px;
 }
 
 .pdp-image {
   width: 510px;
   height: auto;
   margin-top: 75px;
+  margin-left: 30px;
 }
 
 .pdp-image-wrapper {
