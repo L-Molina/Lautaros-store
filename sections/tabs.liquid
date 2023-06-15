@@ -1,12 +1,12 @@
 <div class="tabs-container">
   <div class="tab-selector">
     <div class="tab-option">
-      <button class="tab-button selected" id="1">Tab 1</button>
-      <button class="tab-button" id="2">Tab 2</button>
-      <button class="tab-button" id="3">Tab 3</button>
+      <button class="tab-button" onclick="tabActivate(event, '1')" id="defaultOpen">Tab 1</button>
+      <button class="tab-button" onclick="tabActivate(event, '2')">Tab 2</button>
+      <button class="tab-button" onclick="tabActivate(event, '3')">Tab 3</button>
     </div>
   </div>
-  <div class="tab-wrapper active" id="1">
+  <div class="tab-wrapper" id="1">
 		<div class="tab">
 			<h2 class="tab-title">Titulo 1</h2>
     	<p class="tab-text">
@@ -37,19 +37,21 @@
 			</p>
 		</div>
   </div>
-</div>s
+</div>
 
 <script>
-  var buttons = document.getElementsByClassName("tab-button");
-	var tabs = document.getElementsByClassName("tab-wrapper");
-  for (let i = 0; i = buttons.length; i++) {
-    buttons[i].addEventListener("click", function () {
-			if (buttons[i].click = true) {
-				buttons.classList.remove("selected");
-				tabs.classList.remove("active")
-				buttons[i].classList.add("selected");
-				tabs[i].classList.add("active")
-			}
-    });
-  }
+	document.getElementById("defaultOpen").click();
+  function tabActivate(evt, tabId) {
+		var i, tabWrapper, tabButton;
+		tabWrapper = document.getElementsByClassName("tab-wrapper")
+		for (i = 0; i < tabWrapper.length; i++) {
+			tabWrapper[i].style.display = "none";
+		}
+		tabButton = document.getElementsByClassName("tab-button")
+		for (i = 0; i < tabButton.length; i++) {
+			tabButton[i].className = tabButton[i].className.replace(" selected", "")
+		}
+		document.getElementById(tabId).style.display = "block"
+		evt.currentTarget.className += " selected"
+	}
 </script>

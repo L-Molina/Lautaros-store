@@ -1249,7 +1249,7 @@ hr {
   align-items: center;
   max-width: 1420px;
   width: fit-content;
-  min-height: 210px;
+  min-height: 175px;
   background-color: white;
   border-radius: 10px;
   display: none;
@@ -1284,6 +1284,7 @@ hr {
 }
 
 .tab-button {
+  overflow: hidden;
   border: 1px solid #252B42;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -1304,3 +1305,17 @@ hr {
   border-bottom: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .tabs-container {
+    max-width: 768px;
+    min-width: 150px;
+    width: fit-content;
+    height: auto;
+  }
+
+  .tab-wrapper .tab {
+    max-width: 718px;
+    min-width: 150px;
+    width: auto;
+  }
+}
