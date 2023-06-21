@@ -64,6 +64,42 @@
           "brand_name": "Lautaro's Store",
           "footer-description": "Lo que querés encontrar, acá lo tenemos."
         }
+      },
+      "tabs": {
+        "type": "tabs",
+        "blocks": {
+          "e56631a6-59ba-487c-8083-4df5cdb05e95": {
+            "type": "tabs",
+            "settings": {
+              "button_title": "Tab 1",
+              "tab_title": "Saludo 1",
+              "tab_text": "Alia prima eam te. Est meliore suscipiantur reprehendunt et. Eu alia neglegentur per, ei vix diam minimum, everti voluptatibus usu ut. Habeo commune eu pro. No quod solet intellegat qui, usu ex augue comprehensam. Alienum disputationi vim an. Vix ut errem concludaturque, in eum error menandri. Vel tibique dolores ex. Ullum quaeque feugait cum ea, in mea sententiae reprimique. Id error feugait ponderum eam, et mei etiam saepe aliquando."
+            }
+          },
+          "12bd177e-444e-4b1c-99c1-d66d77b770c6": {
+            "type": "tabs",
+            "settings": {
+              "button_title": "Tab 2",
+              "tab_title": "Saludo 2",
+              "tab_text": "Hinc viris eirmod eu sed, ad meis nominati pericula sit, no alii ubique nominati pro. Vel eu autem facer phaedrum, eum sententiae efficiantur ad, vero definiebas at mea. Sit meis intellegebat et, cu enim diceret efficiantur est, ne brute solet dolorum cum. Doming fabulas molestiae at sea. Pro blandit mentitum disputationi eu, ne pro modus invenire repudiandae, eros praesent ne qui. Eos id sanctus dolorum phaedrum. Et usu erant expetenda."
+            }
+          },
+          "d4d25b92-c083-47f8-8077-6f0a3f58fb51": {
+            "type": "tabs",
+            "settings": {
+              "button_title": "Tab 3",
+              "tab_title": "Saludo 3",
+              "tab_text": "Lorem ipsum dolor sit amet, te has commodo impedit fabellas. Adolescens mediocritatem mei ad, quas dolore facilisi his no. Et tollit scribentur pro, eu intellegat pertinacia delicatissimi nec, viderer docendi eligendi mei ei. Cu solet nostrum atomorum vix, sed debet forensibus te."
+            }
+          }
+        },
+        "block_order": [
+          "e56631a6-59ba-487c-8083-4df5cdb05e95",
+          "12bd177e-444e-4b1c-99c1-d66d77b770c6",
+          "d4d25b92-c083-47f8-8077-6f0a3f58fb51"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [

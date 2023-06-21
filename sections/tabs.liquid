@@ -1,42 +1,26 @@
 <div class="tabs-container">
-  <div class="tab-selector">
-    <div class="tab-option">
-      <button class="tab-button" onclick="tabActivate(event, '1')" id="defaultOpen">Tab 1</button>
-      <button class="tab-button" onclick="tabActivate(event, '2')">Tab 2</button>
-      <button class="tab-button" onclick="tabActivate(event, '3')">Tab 3</button>
-    </div>
-  </div>
-  <div class="tab-wrapper" id="1">
-		<div class="tab">
-			<h2 class="tab-title">Titulo 1</h2>
-    	<p class="tab-text">
-				Lorem ipsum dolor sit amet, nec velit nostro eu, veniam aliquip constituto ius ad, cum ut oblique adversarium. Sed ei quas tincidunt consetetur, eu eos feugait minimum. Sed odio sale et, erat putant ad pro. Eu causae nostrum mel. Est congue vituperata ex, eu pro quot appetere. Usu iracundia definiebas ne.
-				In vis debet adipisci, ad qui ullum labitur invidunt, paulo melius voluptaria eam te. Nulla eleifend ad quo. Nec ei voluptua urbanitas pertinacia. Mutat fierent honestatis in sit, soluta tibique torquatos no mel. Eam ne integre consectetuer, est an aeterno offendit contentiones. Augue alienum officiis ad eam, eam dicunt explicari et.
-			</p>
-		</div>
-  </div>
-  <div class="tab-wrapper" id="2">
-    <div class="tab">
-			<h2 class="tab-title">Titulo 2</h2>
-    	<p class="tab-text">
-				Lorem ipsum dolor sit amet, nec velit nostro eu, veniam aliquip constituto ius ad, cum ut oblique adversarium. Sed ei quas tincidunt consetetur, eu eos feugait minimum. Sed odio sale et, erat putant ad pro. Eu causae nostrum mel. Est congue vituperata ex, eu pro quot appetere. Usu iracundia definiebas ne.
-				In vis debet adipisci, ad qui ullum labitur invidunt, paulo melius voluptaria eam te. Nulla eleifend ad quo. Nec ei voluptua urbanitas pertinacia. Mutat fierent honestatis in sit, soluta tibique torquatos no mel. Eam ne integre consectetuer, est an aeterno offendit contentiones. Augue alienum officiis ad eam, eam dicunt explicari et.
-				Te dicat quaestio consulatu eum. Qui ut dolores similique, inermis dignissim suscipiantur vel ei. Cu vel sumo illum antiopam, deleniti suscipiantur vituperatoribus ea duo. Eum et disputando deterruisset, no porro voluptatibus est, nam meis vidit legendos ei. Eu iudico ceteros est, quo an wisi semper percipitur.
-				Graeco impedit ne eos, amet quidam signiferumque vim no. Enim malorum tibique ad pri. Vim et sale tritani vocibus, vim vide reque possit ad, sed sumo audiam in. Eu usu scriptorem disputationi, nam facilisi persecuti id, qualisque voluptatibus cum te. Sea nostrud labores definitiones id, salutatus imperdiet scriptorem vim in. Et vel option nostrum assentior.
-				Eros putant partiendo in mei. Ut mei tibique ponderum. Graeco deterruisset ne sea, no aliquando maiestatis eos, movet clita fabulas et sit. Ne nam omnium diceret volumus, ea dictas lobortis sapientem vis.
-			</p>
-		</div>
-  </div>
-  <div class="tab-wrapper" id="3">
-		<div class="tab">
-			<h2 class="tab-title">Titulo 3</h2>
-    	<p class="tab-text">
-				Te dicat quaestio consulatu eum. Qui ut dolores similique, inermis dignissim suscipiantur vel ei. Cu vel sumo illum antiopam, deleniti suscipiantur vituperatoribus ea duo. Eum et disputando deterruisset, no porro voluptatibus est, nam meis vidit legendos ei. Eu iudico ceteros est, quo an wisi semper percipitur.
-				Graeco impedit ne eos, amet quidam signiferumque vim no. Enim malorum tibique ad pri. Vim et sale tritani vocibus, vim vide reque possit ad, sed sumo audiam in. Eu usu scriptorem disputationi, nam facilisi persecuti id, qualisque voluptatibus cum te. Sea nostrud labores definitiones id, salutatus imperdiet scriptorem vim in. Et vel option nostrum assentior.
-				Eros putant partiendo in mei. Ut mei tibique ponderum. Graeco deterruisset ne sea, no aliquando maiestatis eos, movet clita fabulas et sit. Ne nam omnium diceret volumus, ea dictas lobortis sapientem vis.
-			</p>
-		</div>
-  </div>
+	<div class="tab-selector">
+		<div class="tab-option">
+			{% for block in section.blocks %}
+  	 		<button class="tab-button" onclick="tabActivate(event, '{{ block.id }}')" id="defaultOpen">
+					{{ block.settings.button_title }}
+				</button>
+			{% endfor %}
+  	</div>
+	</div>
+	
+	{% for block in section.blocks %}
+  	<div class="tab-wrapper" id="{{ block.id }}">
+			<div class="tab">
+				<h2 class="tab-title">
+					{{ block.settings.tab_title }}
+				</h2>
+    		<p class="tab-text">
+					{{ block.settings.tab_text }} 
+				</p>
+			</div>
+  	</div>
+	{% endfor %}
 </div>
 
 <script>
@@ -55,3 +39,36 @@
 		evt.currentTarget.className += " selected"
 	}
 </script>
+
+{% schema %}
+{
+	"name": "tabs",
+	"max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Tabs",
+      "type": "tabs",
+      "settings": [
+				{
+					"type": "text",
+					"id": "button_title",
+					"label": "Button Title",
+					"default": "Tab Button"
+				},
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab Title",
+          "default": "Tab Title"
+        },
+        {
+          "type": "textarea",
+          "id": "tab_text",
+          "label": "Tab Text",
+          "default": "Tab Text"
+        }
+      ]
+		}
+	]
+}
+{% endschema %}
